@@ -1,0 +1,22 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.chat-room-hedder {
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    border-bottom: 1px solid #ccc;
+    top: 0;
+}
+.chat-form {
+    padding: 30px;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #ccc;
+    width: 100%;
+}
+
+#messages{
+    padding:100px 0 100px 0;    /* 上下に160pxを余白を取る */
+}

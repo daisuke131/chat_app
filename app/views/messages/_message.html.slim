@@ -1,0 +1,6 @@
+
+.message
+    - if message.user.id == current_user.id
+        p = "#{message.user.user_name}: #{message.content}"
+    - else
+        p = "#{message.user.user_name}: #{message.content}"

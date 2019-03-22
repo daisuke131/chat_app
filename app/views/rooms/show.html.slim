@@ -1,0 +1,10 @@
+.chat-room-hedder
+    h1 = @room.room_name
+#messages data-room_id= "#{@room.id}" data-user_id= "#{current_user.id}" 
+    = render @messages
+.chat-form
+    label = 'Say something:'
+    input#txt-chat type="text"
+    / input#message-btn type="button" value="送信"
+    = button_tag '送信', id: 'message-btn'
+    = link_to '戻る', root_path, class: 'btn btn-default'

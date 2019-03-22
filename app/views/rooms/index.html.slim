@@ -1,0 +1,11 @@
+h1 = current_user.user_name
+= form_for @room, url: rooms_path do |f|
+    = 'チャットルーム作成：'
+    = f.text_field :room_name
+    = f.submit "作成"
+
+- @rooms.each do |room|
+    .room
+        = link_to room.room_name, room_path(room)
+        - if current_user.id == room.user_id
+            = link_to '[削除]', room_path(room), method: :delete, data: {confirm: '本当に削除しますか？'}
