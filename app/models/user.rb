@@ -6,4 +6,5 @@ class User < ApplicationRecord
          has_many :messages
          has_many :rooms
          validates :user_name, presence: true
+         mount_uploader :user_image, UserImageUploader
 end

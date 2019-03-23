@@ -1,6 +1,14 @@
 
-.message
+.d-flex.p-3
     - if message.user.id == current_user.id
-        p = "#{message.user.user_name}: #{message.content}"
+        .message-user
+            = image_tag message.user.user_image_url(:thumb), class: "message-user-image mx-auto d-block"
+            .text-center.message-user-name = message.user.user_name
+        .message-right.pt-2
+            .message = simple_format message.content
     - else
-        p = "#{message.user.user_name}: #{message.content}"
+        .message-left.pt-2
+            .message = simple_format message.content
+        .message-user
+            = image_tag message.user.user_image_url(:thumb), class: "message-user-image mx-auto d-block"
+            .text-center.message-user-name = message.user.user_name

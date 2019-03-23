@@ -1,11 +1,14 @@
-h1 = current_user.user_name
-= form_for @room, url: rooms_path do |f|
-    = 'チャットルーム作成：'
-    = f.text_field :room_name
-    = f.submit "作成"
+.room-wrapper
+    .room-area
+        .room-create
+            h1 = current_user.user_name
+            = form_for @room, url: rooms_path do |f|
+                = 
+                = f.text_field :room_name, placeholder: "チャットルーム作成"
+                = f.submit "作成",class: "btn btn-outline-primary"
 
-- @rooms.each do |room|
-    .room
-        = link_to room.room_name, room_path(room)
-        - if current_user.id == room.user_id
-            = link_to '[削除]', room_path(room), method: :delete, data: {confirm: '本当に削除しますか？'}
+        - @rooms.each do |room|
+            .room.d-flex
+                .p-1 = link_to room.room_name, room_path(room)
+                - if current_user.id == room.user_id
+                    .ml-auto.p-1 = link_to '[削除]', room_path(room), method: :delete, data: {confirm: '本当に削除しますか？'}
