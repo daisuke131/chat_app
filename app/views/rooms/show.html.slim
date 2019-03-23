@@ -2,6 +2,7 @@
     .container
         h1 = @room.room_name
 #messages.mx-auto data-room_id= "#{@room.id}" data-user_id= "#{current_user.id}" 
+    
     = render @messages
 .chat-form
     .container.p-3

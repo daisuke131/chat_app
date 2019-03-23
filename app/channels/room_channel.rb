@@ -22,6 +22,10 @@ class RoomChannel < ApplicationCable::Channel
   private
 
     def render_message(message)
-      ApplicationController.renderer.render(partial: 'messages/message', locals: {message: message})
+        if params['user_id'] == message.user_id
+            ApplicationController.renderer.render(partial: 'messages/me-message', locals: {message: message})
+        else
+            ApplicationController.renderer.render(partial: 'messages/you-message', locals: {message: message})
+        end
     end
 end

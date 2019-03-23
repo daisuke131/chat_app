@@ -1,0 +1,6 @@
+.d-flex.p-3
+    .message-left.pt-2
+        .message = simple_format message.content
+    .message-user
+        = image_tag message.user.user_image_url(:thumb), class: "message-user-image mx-auto d-block"
+        .text-center.message-user-name = message.user.user_name

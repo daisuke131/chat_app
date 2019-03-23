@@ -11,11 +11,12 @@ $(document).on("turbolinks:load", function() {
     {
       received: function(data) {
         // Called when there's incoming data on the websocket for this channel
+        // debugger
         $("#messages").append(data["message"]);
         // $(body).animate({scrollTop: $(body)[0].scrollHeight}, 'fast');
-        $("body")
-          .delay(100)
-          .animate({ scrollTop: $(document).height() }, 1500);
+        // $("body")
+        //   .delay(100)
+        //   .animate({ scrollTop: $(document).height() }, 1500);
       },
 
       speak: function(message) {
