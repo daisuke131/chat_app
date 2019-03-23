@@ -30,7 +30,6 @@ test:
 #   password: <%= ENV['CHAT_APP_DATABASE_PASSWORD'] %>
 production:
   <<: *default
-  database: chat_app_production
   adapter: postgresql
   encoding: unicode
   pool: 5
