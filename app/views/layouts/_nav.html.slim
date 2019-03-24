@@ -1,13 +1,20 @@
-.d-flex
-    .mr-auto.p-2
-        = link_to 'チャットアプリ', root_path, class:"navbar-brand text-white"
-    - if user_signed_in?
-        .p-2
-            = link_to '編集', edit_user_registration_path, class:"nav-link text-white"
-        .p-2
-            = link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"nav-link text-white"
-    - else
-        .p-2
-            = link_to '新規登録', new_user_registration_path, class:"nav-link text-white"
-        .p-2
-            = link_to 'ログイン', new_user_session_path, class:"nav-link text-white"
+nav.navbar.navbar-expand-lg.navbar-dark
+    .container
+        = link_to 'チャットアプリ', root_path, class:"navbar-brand"
+        button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"
+            span.navbar-toggler-icon
+        .collapse.navbar-collapse#navbarNavDropdown
+
+            ul.navbar-nav.mr-auto
+
+            ul.navbar-nav
+                - if user_signed_in?
+                    li.nav-item
+                        = link_to '編集', edit_user_registration_path, class:"nav-link"
+                    li.nav-item
+                        = link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"nav-link"
+                - else
+                    li.nav-item
+                        = link_to '新規登録', new_user_registration_path, class:"nav-link"
+                    li.nav-item
+                        = link_to 'ログイン', new_user_session_path, class:"nav-link"

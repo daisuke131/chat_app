@@ -1,12 +1,12 @@
 .chat-room-hedder.shadow-sm
-    .container
-        h1 = @room.room_name
+    .container.d-flex
+        .d-flex.align-items-center = link_to root_path do
+            <i class="fas fa-chevron-left"></i>
+        h3 = @room.room_name
 #messages.mx-auto data-room_id= "#{@room.id}" data-user_id= "#{current_user.id}" 
     
     = render @messages
-.chat-form
-    .container.p-3
-        textarea#txt-chat.w-100
-        .clearfix
-            = button_tag '送信', id: 'message-btn', class: "btn btn-outline-primary float-right"
-    / = link_to '戻る', root_path, class: "btn btn-outline-primary"
+.chat-wrapper
+    .chat-form.container.p-3.mx-auto.d-flex
+        textarea#txt-chat
+        = button_tag '送信', id: 'message-btn', class: "btn btn-outline-primary"

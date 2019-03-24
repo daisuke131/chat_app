@@ -11,7 +11,6 @@ $(document).on("turbolinks:load", function() {
     {
       received: function(data) {
         // Called when there's incoming data on the websocket for this channel
-        // debugger
         $("#messages").append(data["message"]);
         // $(body).animate({scrollTop: $(body)[0].scrollHeight}, 'fast');
         // $("body")
@@ -39,6 +38,7 @@ $(document).on("turbolinks:load", function() {
         App.room.speak($("#txt-chat").val());
         $("#txt-chat").val("");
         // e.preventDefault();
+        $('html,body').animate({scrollTop: $('body').height()});
       });
     })
   );

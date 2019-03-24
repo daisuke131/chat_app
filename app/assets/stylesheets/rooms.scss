@@ -1,8 +1,8 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-header {
+nav {
+    width: 100%;
     background-color: #00B900;
 }
 // index
@@ -26,11 +26,22 @@ header {
 }
 
 // show
+.fa-chevron-left {
+    font-size: 20px;
+    padding-right: 20px;
+    color: #aaa
+}
 .chat-room-hedder {
-    width: 100vw;
+    width: 100%;
     background-color: white;
-    // position: fixed;
     border-bottom: 1px solid #ccc;
+    h3 {
+        margin-top: 8px;
+    }
+}
+.chat-room-hedder.fixed {
+    position: fixed;
+    left: 0;
     top: 0;
 }
 
@@ -38,7 +49,7 @@ header {
     max-width: 700px;
 }
 
-.chat-form {
+.chat-wrapper {
     width: 100%;
     background-color: white;
     position: fixed;
@@ -46,8 +57,21 @@ header {
     border-top: 1px solid #ccc;
 }
 
+.chat-form {
+    max-width: 700px !important;
+    textarea {
+        height: 40px;
+        resize: none;
+        width: 100%;
+    }
+    button {
+        width: 80px;
+        margin-left: 20px;
+    }
+}
+
 #messages {
-    padding-bottom: 130px;
+    padding-bottom: 70px;
 }
 
 .message-user {
