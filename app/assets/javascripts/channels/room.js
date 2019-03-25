@@ -10,7 +10,6 @@ $(document).on("turbolinks:load", function() {
     },
     {
       received: function(data) {
-        // $("#messages").append(data["message"]);
         if ($("#messages").data("user_id") == data["user_id"]) {
             $("#messages").append(data["me_message"]);
         } else {
