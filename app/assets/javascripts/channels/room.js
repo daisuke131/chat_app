@@ -10,12 +10,13 @@ $(document).on("turbolinks:load", function() {
     },
     {
       received: function(data) {
-        // Called when there's incoming data on the websocket for this channel
         $("#messages").append(data["message"]);
-        // $(body).animate({scrollTop: $(body)[0].scrollHeight}, 'fast');
-        // $("body")
-        //   .delay(100)
-        //   .animate({ scrollTop: $(document).height() }, 1500);
+        // $("#messages").append("<p>あ</p>");
+        $('html,body').animate({scrollTop: $('body').height()});
+        debugger
+        if ($("#messages").data("user_id") != 2) {
+            $("#messages").append("<p>あ</p>");
+        }
       },
 
       speak: function(message) {
@@ -38,7 +39,7 @@ $(document).on("turbolinks:load", function() {
         App.room.speak($("#txt-chat").val());
         $("#txt-chat").val("");
         // e.preventDefault();
-        $('html,body').animate({scrollTop: $('body').height()});
+        // $('html,body').animate({scrollTop: $('body').height()});
       });
     })
   );

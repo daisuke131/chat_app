@@ -5,9 +5,11 @@ nav {
     width: 100%;
     background-color: #00B900;
 }
+
 // index
 .room-wrapper {
     padding: 50px;
+
     .room-area {
         padding: 20px;
         width: 100%;
@@ -16,10 +18,12 @@ nav {
         background-color: white;
     }
 }
+
 .room-create {
     padding-bottom: 20px;
     border-bottom: 1px solid #000;
 }
+
 .room {
     padding: 10px;
     border-top: 1px solid #ccc;
@@ -31,14 +35,17 @@ nav {
     padding-right: 20px;
     color: #aaa
 }
+
 .chat-room-hedder {
     width: 100%;
     background-color: white;
     border-bottom: 1px solid #ccc;
+
     h3 {
         margin-top: 8px;
     }
 }
+
 .chat-room-hedder.fixed {
     position: fixed;
     left: 0;
@@ -59,11 +66,13 @@ nav {
 
 .chat-form {
     max-width: 700px !important;
+
     textarea {
         height: 40px;
         resize: none;
         width: 100%;
     }
+
     button {
         width: 80px;
         margin-left: 20px;
@@ -76,18 +85,26 @@ nav {
 
 .message-user {
     width: 100px;
+
+    .message-user-image {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .message-user-name {
+        font-size: 14px;
+    }
 }
-.message-user-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-}
+
+
+
 
 .message {
     width: 100%;
     position: relative;
-    padding: 20px;
+    padding: 10px 20px 10px 20px;
     border-radius: 20px;
     z-index: -1000;
 
@@ -101,19 +118,24 @@ nav {
         border-top: 0px solid transparent;
         border-bottom: 20px solid transparent;
     }
+
     p {
         margin-bottom: 0;
     }
 }
+
 .message-right {
     padding-left: 5%;
     width: 100%;
+
     .message {
         background-color: white;
+
         &::after {
             left: -16px;
             border-right: 25px solid white;
         }
+
         p {
             color: #1DA1F2;
         }
@@ -123,30 +145,35 @@ nav {
 .message-left {
     padding-right: 5%;
     width: 100%;
+
     .message {
         background-color: #1DA1F2;
+
         &::after {
             right: -16px;
             border-left: 25px solid #1DA1F2;
         }
+
         p {
             color: white;
         }
     }
 }
 
-
-
 @media (max-width: 544px) {
-    .message-user-image {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        object-fit: cover;
+    .message-user {
+        .message-user-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .message-user-name {
+            font-size: 10px;
+        }
     }
-    .message-user-name {
-        font-size: 10px;
-    }
+
     .room-wrapper {
         padding: 0px;
     }
