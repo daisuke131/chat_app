@@ -10,13 +10,13 @@ $(document).on("turbolinks:load", function() {
     },
     {
       received: function(data) {
-        $("#messages").append(data["message"]);
-        // $("#messages").append("<p>あ</p>");
-        $('html,body').animate({scrollTop: $('body').height()});
-        debugger
-        if ($("#messages").data("user_id") != 2) {
-            $("#messages").append("<p>あ</p>");
+        // $("#messages").append(data["message"]);
+        if ($("#messages").data("user_id") == data["user_id"]) {
+            $("#messages").append(data["me_message"]);
+        } else {
+            $("#messages").append(data["you_message"]);
         }
+        $('html,body').animate({scrollTop: $('body').height()});
       },
 
       speak: function(message) {
@@ -39,7 +39,6 @@ $(document).on("turbolinks:load", function() {
         App.room.speak($("#txt-chat").val());
         $("#txt-chat").val("");
         // e.preventDefault();
-        // $('html,body').animate({scrollTop: $('body').height()});
       });
     })
   );
