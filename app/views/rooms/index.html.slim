@@ -12,3 +12,4 @@
                 .p-1 = link_to room.room_name, room_path(room)
                 - if current_user.id == room.user_id
                     .ml-auto.p-1 = link_to '[削除]', room_path(room), method: :delete, data: {confirm: '本当に削除しますか？'}
+        .ugg = paginate @rooms

@@ -3,8 +3,10 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!
 
+  PER = 8
+
   def index
-    @rooms = Room.all.order(created_at: :desc)
+    @rooms = Room.order(created_at: :desc).page(params[:page]).per(PER)
     @room = Room.new
   end
 

@@ -4,14 +4,20 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.1'
 
 gem 'devise'
+# 日本語対応
 gem 'devise-i18n'
+gem 'rails-i18n'
+
 gem 'bootstrap'
 gem 'jquery-rails'
+
 gem 'slim-rails'
 gem 'html2slim'
-gem 'rails-i18n'
+# 画像アップロード
 gem 'carrierwave'
 gem 'rmagick'
+# ページネーション
+gem 'kaminari'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
