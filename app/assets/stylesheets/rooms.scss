@@ -1,10 +1,6 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-nav {
-    width: 100%;
-    background-color: #00B900;
-}
 
 // index
 .room-wrapper {
@@ -98,9 +94,6 @@ nav {
     }
 }
 
-
-
-
 .message {
     width: 100%;
     position: relative;
@@ -124,20 +117,23 @@ nav {
     }
 }
 
+$message-right-back-color: white;
+$message-left-back-color: #1DA1F2;
+
 .message-right {
     padding-left: 5%;
     width: 100%;
 
     .message {
-        background-color: white;
+        background-color: $message-right-back-color;
 
         &::after {
             left: -16px;
-            border-right: 25px solid white;
+            border-right: 25px solid $message-right-back-color;
         }
 
         p {
-            color: #1DA1F2;
+            color: $message-left-back-color;
         }
     }
 }
@@ -147,15 +143,15 @@ nav {
     width: 100%;
 
     .message {
-        background-color: #1DA1F2;
+        background-color: $message-left-back-color;
 
         &::after {
             right: -16px;
-            border-left: 25px solid #1DA1F2;
+            border-left: 25px solid $message-left-back-color;
         }
 
         p {
-            color: white;
+            color: $message-right-back-color;
         }
     }
 }
