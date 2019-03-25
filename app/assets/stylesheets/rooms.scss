@@ -4,177 +4,178 @@
 
 // index
 .room-wrapper {
-    padding: 50px;
+  padding: 50px;
 
-    .room-area {
-        padding: 20px;
-        width: 100%;
-        max-width: 700px;
-        margin: auto;
-        background-color: white;
-    }
+  .room-area {
+    padding: 20px;
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    background-color: white;
+  }
 }
 
 .room-create {
-    padding-bottom: 20px;
-    border-bottom: 1px solid #000;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #000;
 }
 
 .room {
-    padding: 10px;
-    border-top: 1px solid #ccc;
+  padding: 10px;
+  border-top: 1px solid #ccc;
 }
 
 .pagination {
-    justify-content: center;
+  justify-content: center;
 }
 
 // show
 .fa-chevron-left {
-    font-size: 20px;
-    padding-right: 20px;
-    color: #aaa
+  font-size: 20px;
+  padding-right: 20px;
+  color: #aaa;
 }
 
 .chat-room-hedder {
-    width: 100%;
-    background-color: white;
-    border-bottom: 1px solid #ccc;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
 
-    h3 {
-        margin-top: 8px;
-    }
+  h3 {
+    margin-top: 8px;
+  }
 }
 
 .chat-room-hedder.fixed {
-    position: fixed;
-    left: 0;
-    top: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 
 #messages {
-    max-width: 700px;
+  max-width: 700px;
 }
 
 .chat-wrapper {
-    width: 100%;
-    background-color: white;
-    position: fixed;
-    bottom: 0;
-    border-top: 1px solid #ccc;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #ccc;
 }
 
 .chat-form {
-    max-width: 700px !important;
+  max-width: 700px !important;
 
-    textarea {
-        height: 40px;
-        resize: none;
-        width: 100%;
-    }
+  textarea {
+    height: 40px;
+    resize: none;
+    width: 100%;
+  }
 
-    button {
-        width: 80px;
-        margin-left: 20px;
-    }
+  button {
+    width: 80px;
+    margin-left: 20px;
+  }
 }
 
 #messages {
-    padding-bottom: 70px;
+  padding-bottom: 70px;
 }
 
 .message-user {
-    width: 100px;
+  width: 100px;
 
-    .message-user-image {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
+  .message-user-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
 
-    .message-user-name {
-        font-size: 14px;
-    }
+  .message-user-name {
+    font-size: 14px;
+  }
 }
 
 .message {
-    width: 100%;
-    position: relative;
-    padding: 10px 20px 10px 20px;
-    border-radius: 20px;
-    z-index: -1000;
+  width: 100%;
+  position: relative;
+  padding: 10px 20px 10px 20px;
+  border-radius: 20px;
+  z-index: -1000;
 
-    &::after {
-        content: '';
-        position: absolute;
-        display: block;
-        width: 0;
-        height: 0;
-        top: 10px;
-        border-top: 0px solid transparent;
-        border-bottom: 20px solid transparent;
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    top: 10px;
+    border-top: 0px solid transparent;
+    border-bottom: 20px solid transparent;
+  }
 
-    p {
-        margin-bottom: 0;
-    }
+  p {
+    margin-bottom: 0;
+  }
 }
 
 $message-right-back-color: white;
-$message-left-back-color: #1DA1F2;
+$message-left-back-color: #1da1f2;
 
 .message-right {
-    padding-left: 5%;
-    width: 100%;
+  padding-left: 5%;
+  width: 100%;
 
-    .message {
-        background-color: $message-right-back-color;
+  .message {
+    background-color: $message-right-back-color;
 
-        &::after {
-            left: -16px;
-            border-right: 25px solid $message-right-back-color;
-        }
-
-        p {
-            color: $message-left-back-color;
-        }
+    &::after {
+      left: -16px;
+      border-right: 25px solid $message-right-back-color;
     }
+
+    p {
+      color: $message-left-back-color;
+    }
+  }
 }
 
 .message-left {
-    padding-right: 5%;
-    width: 100%;
+  padding-right: 5%;
+  width: 100%;
 
-    .message {
-        background-color: $message-left-back-color;
+  .message {
+    background-color: $message-left-back-color;
 
-        &::after {
-            right: -16px;
-            border-left: 25px solid $message-left-back-color;
-        }
-
-        p {
-            color: $message-right-back-color;
-        }
+    &::after {
+      right: -16px;
+      border-left: 25px solid $message-left-back-color;
     }
+
+    p {
+      color: $message-right-back-color;
+    }
+  }
 }
 
 @media (max-width: 544px) {
-    .message-user {
-        .message-user-image {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .message-user-name {
-            font-size: 10px;
-        }
+  //index
+  .room-wrapper {
+    padding: 0px;
+  }
+  //show
+  .message-user {
+    .message-user-image {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
     }
 
-    .room-wrapper {
-        padding: 0px;
+    .message-user-name {
+      font-size: 10px;
     }
+  }
 }
