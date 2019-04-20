@@ -24,7 +24,6 @@ RUN apk update \
       # rmagick用にバージョン落とし
       imagemagick6 \
       imagemagick6-dev \
-
       jq \
       less \
       libgcrypt-dev \
