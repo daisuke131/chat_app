@@ -1,25 +1,27 @@
-$(document).on("turbolinks:request-start", function() {
+$(document).on("turbolinks:request-start", function () {
   App.room.unsubscribe();
 });
-$(document).on("turbolinks:load", function() {
-  App.room = App.cable.subscriptions.create(
-    {
+$(document).on("turbolinks:load", function () {
+  App.room = App.cable.subscriptions.create({
       channel: "RoomChannel",
       user_id: $("#messages").data("user_id"),
       room_id: $("#messages").data("room_id")
-    },
-    {
-      received: function(data) {
+    }, {
+      received: function (data) {
         if ($("#messages").data("user_id") == data["user_id"]) {
-            $("#messages").append(data["me_message"]);
+          $("#messages").append(data["me_message"]);
         } else {
-            $("#messages").append(data["you_message"]);
+          $("#messages").append(data["you_message"]);
         }
-        $('html,body').animate({scrollTop: $('body').height()});
+        $('html,body').animate({
+          scrollTop: $('body').height()
+        });
       },
 
-      speak: function(message) {
-        return this.perform("speak", { message: message });
+      speak: function (message) {
+        return this.perform("speak", {
+          message: message
+        });
       }
     },
 
@@ -33,8 +35,8 @@ $(document).on("turbolinks:load", function() {
     //     })
     //   })
 
-    $(function() {
-      $("#message-btn").click(function(e) {
+    $(function () {
+      $("#message-btn").click(function (e) {
         App.room.speak($("#txt-chat").val());
         $("#txt-chat").val("");
         // e.preventDefault();
