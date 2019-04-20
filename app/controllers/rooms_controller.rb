@@ -22,13 +22,13 @@ class RoomsController < ApplicationController
 
   def destroy
     @room = Room.find(params[:id])
-    @room.destroy
+    @room.destroy!
     redirect_to root_path
   end
 
   private
 
-  def room_params
-    params.require(:room).permit(:room_name).merge(user_id: current_user.id)
-  end
+    def room_params
+      params.require(:room).permit(:room_name).merge(user_id: current_user.id)
+    end
 end
