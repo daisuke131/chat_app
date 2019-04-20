@@ -1,6 +1,6 @@
 $(function() {
 	$(window).on('load scroll', function(){
-		if ($(window).scrollTop() > 55) {
+		if ($(window).scrollTop() > 60) {
 			$('.chat-room-hedder').addClass('fixed');
 		} else {
 			$('.chat-room-hedder').removeClass('fixed');
