@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class RoomsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :authenticate_user!, only: [:create, :destroy]
 
   PER = 8
 
