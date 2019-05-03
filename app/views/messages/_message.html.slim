@@ -1,5 +1,5 @@
 .d-flex.p-3
-    - if message.user.id == current_user.id
+    - if user_signed_in? && message.user.id == current_user.id
         .message-user
             = image_tag message.user.user_image_url(:thumb), class: "message-user-image mx-auto d-block"
             .text-center.message-user-name = message.user.user_name
